@@ -88,7 +88,12 @@ const iceCreamReducer = (state = initialIceCreamState, action) => {
     }
 }
 
-const store = createStore(reducer)
+const rootReducer = redux.combineReducers({
+    cake: cakeReducer,
+    iceCream: iceCreamReducer
+})
+
+const store = createStore(rootReducer)
 
 console.log(store.getState(), 'initial');
 
